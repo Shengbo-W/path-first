@@ -47,10 +47,19 @@ It also names the failure modes it is meant to catch: literal compliance, treati
 Zero dependencies. Node 18+.
 
 ```bash
+# straight from GitHub — nothing to publish
+npm i -D github:Shengbo-W/path-first
 npx path-first init
 ```
 
-That appends a managed block to `AGENTS.md` in the current directory — the file Codex, Cursor, Gemini CLI, Zed, Aider, and most other agents already read.
+Or clone it and run the script directly:
+
+```bash
+git clone https://github.com/Shengbo-W/path-first.git
+node path-first/bin/path-first.mjs init --cwd /path/to/your/project
+```
+
+`init` appends a managed block to `AGENTS.md` in the directory you point it at — the file Codex, Cursor, Gemini CLI, Zed, Aider, and most other agents already read. With the npm install above, the rest of this README's commands work as written.
 
 ```bash
 path-first init --lang zh            # 中文版规则

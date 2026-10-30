@@ -47,10 +47,19 @@ agent 照做了。日志 40 MB，报错那一行没带文件指针。它仍然�
 零依赖，Node 18+。
 
 ```bash
+# 直接从 GitHub 装，不用等发版
+npm i -D github:Shengbo-W/path-first
 npx path-first init
 ```
 
-它会在当前目录的 `AGENTS.md` 里追加一个托管块——Codex、Cursor、Gemini CLI、Zed、Aider 等大多数 agent 本来就会读这个文件。
+或者直接克隆下来跑脚本：
+
+```bash
+git clone https://github.com/Shengbo-W/path-first.git
+node path-first/bin/path-first.mjs init --cwd /path/to/your/project
+```
+
+`init` 会在你指定目录的 `AGENTS.md` 里追加一个托管块——Codex、Cursor、Gemini CLI、Zed、Aider 等大多数 agent 本来就会读这个文件。用了上面的 npm 安装方式，本文后面所有命令都可以照写。
 
 ```bash
 path-first init --lang zh            # 中文版规则
