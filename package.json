@@ -36,10 +36,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shengbo-W/path-first.git"
+    "url": "git+https://github.com/Shengbo-W/route-optimization.git"
   },
   "bugs": {
-    "url": "https://github.com/Shengbo-W/path-first/issues"
+    "url": "https://github.com/Shengbo-W/route-optimization/issues"
   },
-  "homepage": "https://github.com/Shengbo-W/path-first#readme"
+  "homepage": "https://github.com/Shengbo-W/route-optimization#readme"
 }
