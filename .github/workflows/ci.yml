@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: ['18', '20', '22']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node --test test/
+      - name: installer round-trip
+        shell: bash
+        run: |
+          d=$(mktemp -d)
+          printf '# House rules\n\n- keep tests green\n' > "$d/AGENTS.md"
+          node bin/path-first.mjs init --cwd "$d" --lang zh
+          node bin/path-first.mjs check --cwd "$d"
+          node bin/path-first.mjs remove --cwd "$d"
+          grep -q 'keep tests green' "$d/AGENTS.md"
+          ! grep -q 'path-first:begin' "$d/AGENTS.md"

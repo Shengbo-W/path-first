@@ -1,0 +1,45 @@
+{
+  "name": "path-first",
+  "version": "0.1.0",
+  "description": "A rule that tells your coding agent to check whether your route is the best one before it starts walking it, and to say so once instead of complying silently.",
+  "keywords": [
+    "agents",
+    "coding-agent",
+    "prompt",
+    "agents-md",
+    "claude",
+    "codex",
+    "cursor",
+    "skill"
+  ],
+  "license": "MIT",
+  "author": "Shengbo-W",
+  "type": "module",
+  "bin": {
+    "path-first": "bin/path-first.mjs"
+  },
+  "files": [
+    "bin",
+    "rules",
+    "skills",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test test/",
+    "check": "node bin/path-first.mjs check"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shengbo-W/path-first.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Shengbo-W/path-first/issues"
+  },
+  "homepage": "https://github.com/Shengbo-W/path-first#readme"
+}
